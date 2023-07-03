@@ -22,3 +22,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\ProductionCompany:
+        arguments:
+            $budget: '@App\Entity\Budget'
+
+    App\Interface\BudgetInterface: '@App\Entity\Budget'
+
+    App\Entity\Budget:
+        arguments:
+            $amount: 1000000
